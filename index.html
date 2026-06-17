@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>制作ケーススタディ — しずく</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&family=Zen+Kaku+Gothic+New:wght@400;500&family=Noto+Sans+JP:wght@400&display=swap" rel="stylesheet">
+<style>
+  /* 正本トークン（公開用に自己完結＝外部CSS非依存） */
+  :root{
+    --font-sans:"Zen Kaku Gothic New",system-ui,sans-serif;
+    --font-serif:"Shippori Mincho",serif;
+    --color-bg:#F7F8FC; --color-fg:#1E2633; --color-muted:#6E7686;
+    --color-primary:#5A84C9; --color-border:#DCE9FF;
+    --color-surface-2:#EEF4FF; --color-reflect:#E6F5FF; --radius-lg:20px;
+  }
+  *{box-sizing:border-box} html,body{margin:0}
+  body{font-family:var(--font-sans);color:var(--color-fg);
+    background:radial-gradient(46% 36% at 86% -2%,var(--color-reflect),transparent 70%),var(--color-bg);
+    min-height:100vh;padding:56px 24px 80px;line-height:1.8}
+  .wrap{max-width:920px;margin:0 auto}
+  .head{border-left:2px solid var(--color-primary);padding-left:24px;margin-bottom:14px}
+  .eyebrow{font-size:11px;letter-spacing:.22em;color:var(--color-primary);margin:0 0 10px}
+  h1{font-family:var(--font-serif);font-weight:700;font-size:clamp(26px,5vw,38px);margin:0 0 12px;letter-spacing:.03em}
+  .lead{color:var(--color-muted);font-size:14px;max-width:48ch;margin:0}
+  .range{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 40px}
+  .range span{font-size:11px;background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:999px;padding:6px 13px;color:var(--color-fg)}
+  .case{background:rgba(255,255,255,.62);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+    border:1px solid var(--color-border);border-radius:var(--radius-lg);box-shadow:0 8px 24px rgba(30,38,51,.05);
+    overflow:hidden;margin-bottom:24px}
+  .thumb{height:120px}
+  .case-body{padding:26px 28px}
+  .case h2{font-family:var(--font-serif);font-size:22px;margin:0 0 4px}
+  .domain{font-size:11px;letter-spacing:.12em;color:var(--color-primary);margin:0 0 16px}
+  .core{font-size:14px;margin:0 0 18px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px}
+  @media(max-width:640px){.grid3{grid-template-columns:1fr}}
+  .b{background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:14px;padding:13px 15px}
+  .b h3{font-size:11px;letter-spacing:.1em;margin:0 0 6px;color:var(--color-muted)}
+  .b p{font-size:12.5px;margin:0;line-height:1.7}
+  .struct{font-size:11.5px;color:var(--color-muted);margin:8px 0 0}
+  .more{background:rgba(255,255,255,.5);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:22px 26px;font-size:13px;color:var(--color-fg)}
+  .more b{font-family:var(--font-serif)}
+  footer{color:var(--color-muted);font-size:11.5px;margin-top:30px;line-height:1.9}
+</style>
+</head>
+<body><div class="wrap">
+  <div class="head">
+    <p class="eyebrow">CASE STUDIES — landing pages & tools</p>
+    <h1>制作ケーススタディ</h1>
+    <p class="lead">「どう見えるか」より「なぜそのUIにしたか」。淡色のまま、形だけ中性に。世界観・商用・ロジックの3本で、設計の意図を見せます。</p>
+  </div>
+  <div class="range">
+    <span>推し活イベント</span><span>高級サロン</span><span>診断ツール</span>
+    <span>訪問看護</span><span>界隈系通販</span><span>レビュー解析ツール</span>
+  </div>
+
+  <!-- 1 -->
+  <article class="case">
+    <div class="thumb" style="background:radial-gradient(60% 90% at 80% 10%,#DFF7FF,transparent 70%),linear-gradient(120deg,#EEF4FF,#C9DBFF)"></div>
+    <div class="case-body">
+      <h2>aqua festa 2026</h2>
+      <p class="domain">推し活カルチャーイベント ／ 世界観設計</p>
+      <p class="core"><strong>核：</strong>「推しを“空気ごと”持ち込める場所。」騒がしくなりがちな推し活LPに、水と透明感の<strong>静けさ</strong>を持ち込み、情報設計で“好き”を整理した。</p>
+      <div class="grid3">
+        <div class="b"><h3>選択理由</h3><p>淡色グラデ＋静かなヒーロー（「空気をもう一度。」）。量産型フェスLPと真逆の方向で記憶に残す。</p></div>
+        <div class="b"><h3>棄却した案</h3><p>原色・特大キャッチ・CTA連打のギラギラ全部盛りフェスLP。</p></div>
+        <div class="b"><h3>賭けた点</h3><p>イベントLPなのに“静けさ”を主役に。賑やかさより余韻で惹く判断。</p></div>
+      </div>
+      <p class="struct">構成：hero → コンセプト → 出演 → 見どころ → チケット・特典 → 会場 → 応募</p>
+    </div>
+  </article>
+
+  <!-- 2 -->
+  <article class="case">
+    <div class="thumb" style="background:linear-gradient(120deg,#FAFAFA,#EEF4FF 60%,#DCE9FF)"></div>
+    <div class="case-body">
+      <h2>Lumière｜銀座プライベートサロン</h2>
+      <p class="domain">高級美容サロン ／ 商用ランディングページ</p>
+      <p class="core"><strong>核：</strong>「静かな個室で、ただあなたのために。」余白と細い線で“品”を出し、カウンセリング起点の導線に整えた商用LP。</p>
+      <div class="grid3">
+        <div class="b"><h3>選択理由</h3><p>高コントラストを避け、余白・階層・明朝寄りの上品さで信頼感を作る。</p></div>
+        <div class="b"><h3>棄却した案</h3><p>大きいCTAを連打し割引を煽る量産型美容LP（安く見える）。</p></div>
+        <div class="b"><h3>賭けた点</h3><p>主CTAを「初回30分無料カウンセリング」の1点に絞る情報設計の自制。</p></div>
+      </div>
+      <p class="struct">構成：hero → コンセプト → 担当セラピスト → メニュー → お客様の声 → ご来店の流れ → 予約</p>
+    </div>
+  </article>
+
+  <!-- 3 -->
+  <article class="case">
+    <div class="thumb" style="background:conic-gradient(from 200deg at 70% 30%,#CFEFFF,#C9DBFF,#DFF7FF,#7FA8E8,#CFEFFF)"></div>
+    <div class="case-body">
+      <h2>似合いどころ診断</h2>
+      <p class="domain">インタラクティブ診断ツール ／ ロジック設計</p>
+      <p class="core"><strong>核：</strong>感覚的な「似合う」を、シーズン・サブタイプ・骨格・顔タイプの<strong>多軸で構造化</strong>。静的LPでなく、多ステップの状態遷移をJSで設計した。</p>
+      <div class="grid3">
+        <div class="b"><h3>選択理由</h3><p>分岐する設問をstate遷移で管理＝「ロジックも組める」を実証。</p></div>
+        <div class="b"><h3>棄却した案</h3><p>当てずっぽうの占い風・結果を断定して煽るタイプ。</p></div>
+        <div class="b"><h3>賭けた点</h3><p>結果を「断定」でなく「整理する」フレーミングに。“盛らない”美学。</p></div>
+      </div>
+      <p class="struct">構成：シーズン → サブタイプ → 2ndシーズン → 骨格 → 顔タイプ → 結果（多分岐）</p>
+    </div>
+  </article>
+
+  <div class="more">
+    <b>このほかの制作：</b> 訪問看護ステーション「Stillwater」（医療・在宅の寄り添い）／ 界隈系グッズ通販「†YUME GRUNGE†」（病みかわ世界観の没入）／ Amazonレビュー透視・似合い診断などのツール／ バナー＆CSSアニメーション集。
+    <br>＝医療・美容・推し活・界隈・ツールまで、<b>世界観を作り分けながら構造を保つ</b>のが軸。
+  </div>
+
+  <footer>
+    設計の正本：DESIGN.md（意志）／ ui-seed（正本トークン）／ Apple HIG準拠（認知負荷→操作予測→視線誘導）。<br>
+    淡色・明朝・余白で、量産に寄せず“作”として成立させる。 © Shizuku Studio
+  </footer>
+</div></body></html>
